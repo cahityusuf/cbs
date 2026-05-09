@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  deneme: test
+  environment: production
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2026-02-11T08:29:24Z"
+  name: nginx-configmap
+  namespace: dev
+  resourceVersion: "72288"
+  uid: 727b3be1-4823-4000-8acc-57ad1a8cc4b7

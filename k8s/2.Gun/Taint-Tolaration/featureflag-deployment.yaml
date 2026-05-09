@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: featureflag
+  name: featureflag
+  namespace: dev
+spec:
+  selector:
+    matchLabels:
+      app: featureflag
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: featureflag
+    spec:
+      nodeSelector:
+        type: backend
+      tolerations:
+      - key: "type"
+        value: "backend"
+        operator: "Equal"
+        effect: "NoSchedule"
+      containers:
+      - image: cahityusuf/featureflag-turksat:v1
+        imagePullPolicy: Always
+        name: featureflag-turksat
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 250m
+            memory: 4Mi
+      serviceAccountName: featureflag-serviceaccount
