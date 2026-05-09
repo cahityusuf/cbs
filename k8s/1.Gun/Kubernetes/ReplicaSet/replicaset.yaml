@@ -7,7 +7,7 @@ metadata:
     tier: nginx
 spec:
   # modify replicas according to your case
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       tier: nginx

@@ -1,0 +1,7 @@
+kubectl apply -f replicaset.yaml
+kubectl get rs
+kubectl get replicaset
+kubectl get pods
+kubectl scale rs nginx --replicas=10
+kubectl describe rs nginx
+kubectl delete rs nginx
