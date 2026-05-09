@@ -1,0 +1,7 @@
+kubectl apply -f nginx.yaml
+kubectl run nginx-2 --image=nginx:latest
+kubectl run nginx-2 --image=nginx:latest --dry-run=client -o yaml
+kubectl logs nginx
+kubectl describe pod nginx
+kubectl edit pod redis
+kubectl delete po redis
