@@ -5,3 +5,4 @@ kubectl get pods
 kubectl scale rs nginx --replicas=10
 kubectl describe rs nginx
 kubectl delete rs nginx
+kubectl replace -f new-replica-set.yaml
