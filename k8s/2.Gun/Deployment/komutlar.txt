@@ -1,0 +1,9 @@
+kubectl apply -f deployment.yaml
+kubectl get deployment
+kubectl create deploy nginx-deploy-command --image=nginx --replicas=2
+kubectl edit deploy nginx-deploy-command
+kubectl get pods | grep -i nginx-deploy-command
+kubectl rollout history deploy nginx-deploy-command
+kubectl rollout undo deploy nginx-deploy-command
+kubectl set image deploy nginx-deploy-command nginx=nginx:1.16.1
+kubectl scale deployment nginx-deploy-command --replicas=10
